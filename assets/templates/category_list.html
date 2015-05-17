@@ -1,0 +1,30 @@
+---
+layout: theme:default
+---
+<div class="post-archive limit-width">
+  <div class="category-index">
+    <h1>Categories</h1>
+    {% for category in site.categories %}
+      {% assign category_name = category | first | titlecase %}
+      {% assign num_post = category.size %}
+<article class="archive {{ post.class }}" role="article">
+  <header class="archive-entry-header">
+    <h2 class="archive-entry-title"><a href='/categories/{{ category_name }}/'>{{ category_name }} ({{ num_post }})</a></h2>
+  </header>
+
+  {% assign bullet = " <span class='separator'>&bull;</span> " %}
+
+  <footer class='archive-entry-footer' role='contentinfo'>
+  <p>
+    {% filter join_lines:bullet | compact_newlines %}
+    {{ category.permalink }}
+    {%_ categories post %}
+    {%_ tags post %}
+    {% endfilter %}
+  </p>
+  </footer>
+</article>
+    {% endfor %}
+    </div>
+  </div>
+</div>
