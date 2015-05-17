@@ -1,0 +1,10 @@
+# Settings for main header
+title: Test site
+subtitle:
+
+# Links for main navigation
+main_nav:
+  - { url: '/archive/', title: 'Archive' }
+  - { url: '/categories/', title: 'Categories' }
+
+category_indexes:  true

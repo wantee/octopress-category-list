@@ -1,8 +1,10 @@
 # OctopressCategoryList
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/octopress-category-list`. To experiment with that code, run `bin/console` for an interactive prompt.
+A Octopress Ink plugin to generate a category list page for your site.
 
-TODO: Delete this and the text above, and describe your gem
+[![Build Status](https://travis-ci.org/wantee/octopress-category-list.svg)](https://travis-ci.org/wantee/octopress-category-list)
+[![Gem Version](https://badge.fury.io/rb/octopress-category-list.svg)](http://badge.fury.io/rb/octopress-category-list)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/wantee/octopress-category-list/blob/master/LICENSE.txt)
 
 ## Installation
 
@@ -22,7 +24,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Make sure generating category indexes in your site. Set this in your theme config:
+
+```yaml
+category_indexes:  true
+```
+
+Then add navigation to categories or other place to link to `/categories/`:
+
+```yaml
+main_nav:
+  - { url: '/categories/', title: 'Categories' }
+```
 
 ## Development
 
@@ -32,7 +45,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/octopress-category-list/fork )
+1. Fork it ( https://github.com/wantee/octopress-category-list/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

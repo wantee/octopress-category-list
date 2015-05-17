@@ -1,0 +1,6 @@
+- 
+  title: "Test Build"
+  dir: test-site
+  build: true
+  compare: 
+    - _expected/categories/index.html _site/categories/index.html

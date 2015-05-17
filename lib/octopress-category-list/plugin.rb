@@ -1,6 +1,8 @@
+require_relative 'config.rb'
+
 module OctopressCategoryList
 
-  class Plugin < Ink::Plugin
+  class Plugin < Octopress::Ink::Plugin
 
     def register
       super
@@ -15,15 +17,16 @@ module OctopressCategoryList
       @template = find_template('category_list.html')
 
       return unless @template
+
       permalink = "/" + @conf['categories_dir'] + "/index.html"
-      if page = template.new_page({
+      if page = @template.new_page({
           'lang'      => nil,
           'title'     => @conf['category_list_title'],
           'permalink' => permalink,
           'plugin'    => self
         })
 
-        Bootstrap.add_page(page, nil)
+        Octopress::Ink::Bootstrap.add_page(page, nil)
         Octopress.site.pages << page
       end
 
@@ -31,14 +34,7 @@ module OctopressCategoryList
 
     def inject_configs
       @conf = self.config
-      @conf = Jekyll::Utils.deep_merge_hashes(YAML.load(Plugin.default_config), @conf)
-    end
-
-    def self.default_config
-<<-CONFIG
-categories_dir:           "categories"
-category_list_title:      "Categories"
-CONFIG
+      @conf = Jekyll::Utils.deep_merge_hashes(YAML.load(Config.default_config), @conf)
     end
 
   end

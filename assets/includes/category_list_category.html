@@ -1,0 +1,14 @@
+<article class="archive {{ category }}" role="article">
+  {% capture category_permalink %}/categories/{{ category }}/{% endcapture %}
+  <header class="archive-entry-header">
+    <h2 class="archive-entry-title"><a href='{{ category_permalink }}'>{{ category | titlecase }}</a></h2>
+    <div class="archive-entry-date"> posts: {% category_size category %}</div>
+  </header>
+
+
+  <footer class='archive-entry-footer' role='contentinfo'>
+  <p>
+    <a href='{{ category_permalink }}'>Permalink</a>
+  </p>
+  </footer>
+</article>

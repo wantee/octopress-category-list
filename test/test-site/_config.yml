@@ -1,0 +1,7 @@
+name: Test site
+timezone: UTC
+markdown: kramdown
+url: "http://localhost:4000"
+gems: 
+  - octopress-genesis-theme
+  - octopress-category-list
