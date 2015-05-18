@@ -1,6 +1,5 @@
-require_relative 'config.rb'
-
 module OctopressCategoryList
+  autoload :Config,           'octopress-category-list/config'
 
   class Plugin < Octopress::Ink::Plugin
 
